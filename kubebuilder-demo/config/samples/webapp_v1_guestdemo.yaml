@@ -1,0 +1,11 @@
+apiVersion: webapp.my.domain/v1
+kind: Guestdemo
+metadata:
+  labels:
+    app.kubernetes.io/name: kubebuilder-demo
+    app.kubernetes.io/managed-by: kustomize
+  name: guestdemo-sample
+spec:
+  # TODO(user): Add fields here
+  port: 6379
+  num: 2

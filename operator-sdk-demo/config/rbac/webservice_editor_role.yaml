@@ -1,0 +1,27 @@
+# permissions for end users to edit webservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: operator-sdk-demo
+    app.kubernetes.io/managed-by: kustomize
+  name: webservice-editor-role
+rules:
+- apiGroups:
+  - webapps.my.domain
+  resources:
+  - webservices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - webapps.my.domain
+  resources:
+  - webservices/status
+  verbs:
+  - get
